@@ -28,8 +28,7 @@ mocker.get("/api/persons/:id", request => {
   const id = request.params.id
   const person = findPerson(id)
 
-  if (person) return mocker.makeResponse(person)
-  else return mocker.makeResponse("Unknown person", 404)
+  return person ? person : mocker.makeResponse("Unknown person", 404)
 
 })
 
@@ -52,7 +51,7 @@ mocker.put("/api/persons/:id", request => {
     if (person.hasOwnProperty(n)) person[n] = fields[n]
   }
 
-  return mocker.makeResponse(person)
+  return person
 
 })
 
@@ -66,7 +65,7 @@ mocker.post("/api/persons/", request => {
 
   persons.push(newPerson)
 
-  return id
+  return { id }
 
 })
 
