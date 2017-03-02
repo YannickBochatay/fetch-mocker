@@ -1,0 +1,41 @@
+{
+  "name": "fetch-mocker",
+  "version": "0.0.1",
+  "description": "mocker for fetch requests in browser",
+  "main": "lib/index.js",
+  "dependencies": {
+    "path-match": "^1.2.4",
+    "url": "^0.11.0",
+    "whatwg-fetch": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.1.4",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "eslint": "^3.12.2"
+  },
+  "scripts": {
+    "build": "babel src -d lib",
+    "build:test" : "browserify src/test.js -v -t babelify -o test/test.js",
+    "lint": "eslint example --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YannickBochatay/fetch-mocker.git"
+  },
+  "keywords": [
+    "fetch",
+    "mock",
+    "javascript"
+  ],
+  "author": "Yannick Bochatay",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YannickBochatay/fetch-mocker/issues"
+  },
+  "homepage": "https://github.com/YannickBochatay/fetch-mocker#readme"
+}
